@@ -1,0 +1,24 @@
+{% extends 'home.html' %}
+{% load utils %}
+
+{% block content %}
+
+<h1>{{ name }} ({{first_air_date|year_from_date}})</h1>
+<img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{poster_path}}">
+<p>{{ overview }}</p>
+<p>First episode air date: {{ first_air_date }}</p>
+<p>Number of episodes: {{ number_of_episodes }}</p>
+<p>Lastest episode: {{ last_episode_to_air.name }} - {{ last_episode_to_air.season_number }}.{{ last_episode_to_air.episode_number  }}</p>
+<p>Latest reviews: </p>
+{% for review in reviews %}
+	<p>{{ review.author }} - {{ review.author_details.rating }}</p>
+    <p>{{ review.content }}</p>
+{% endfor %}
+<h3>Rate this show</h3>
+<form action ='.' method='POST'>{% csrf_token %}
+	{{ form.as_p }}
+	<input type="submit" value="Save" />
+</form>
+
+
+{% endblock %}
