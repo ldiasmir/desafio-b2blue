@@ -6,6 +6,9 @@
 <h1>{{ name }} ({{first_air_date|year_from_date}})</h1>
 <img src="https://image.tmdb.org/t/p/w185_and_h278_bestv2/{{poster_path}}">
 <p>{{ overview }}</p>
+<p>Genres: {% for genre in genres %}
+<li>{{ genre.name }}</li> 
+{% endfor %}</p>
 <p>First episode air date: {{ first_air_date }}</p>
 <p>Number of episodes: {{ number_of_episodes }}</p>
 <p>Lastest episode: {{ last_episode_to_air.name }} - {{ last_episode_to_air.season_number }}.{{ last_episode_to_air.episode_number  }}</p>
