@@ -22,3 +22,8 @@ Dependencies must be set up in an enviroment before using the project. Follow th
     ```
         python manage.py runserver
     ```
+
+### Example
+
+<img src="https://i.imgur.com/J1ljURK.png" alt="">
+<img src="https://i.imgur.com/fATgMIa.png" alt="">
