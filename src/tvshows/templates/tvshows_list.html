@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+{% load utils %}
+
+{% block content %}
+
+<h1>TV Shows</h1>
+<h2>List of 100 popular tv shows</h2>
+
+{% for result in results %}
+	<p>{{ forloop.counter }} - <a href="/details/{{ result.id }}/">{{ result.name }}</a>
+	({{ result.first_air_date|year_from_date }})
+	{{ result.popularity}}</p>
+{% endfor %}
+
+
+{% endblock %}
